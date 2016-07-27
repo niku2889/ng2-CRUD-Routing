@@ -1,0 +1,34 @@
+﻿<div class="container">
+    <br />
+    <br />
+    <br />
+    <div class="col-md-4 center">
+        <div>
+            <h1>Hero Form</h1>
+            <form #f="ngForm">
+                <div class="form-group">
+                    <label for="userId">userId</label>
+                    <input type="text" class="form-control" required
+                           [(ngModel)]="model.userId"
+                           ngControl="userId" #name="ngForm">
+                    <!--<div [hidden]="userId.valid || userId.pristine" class="alert alert-danger">
+                        userId is required
+                    </div>-->
+                </div>
+                <div class="form-group">
+                    <label for="title">title</label>
+                    <input type="text" class="form-control"
+                           [(ngModel)]="model.title"
+                           ngControl="title">
+                </div>
+                <div class="form-group">
+                    <label for="body">body</label>
+                    <input type="text" class="form-control"
+                           [(ngModel)]="model.body"
+                           ngControl="body">
+                </div>
+                <button type="submit" class="btn btn-default" [disabled]="!f.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿<div class="container body-content" style="padding-top:50px;">
+    <div class="row ">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Dynamic Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-cog"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                    </span>
+                </header>
+
+                <button (click)="addMovie('Kabali','Superstar Rajanikant Movie',1)">Add New Movie</button>
+                <div class="panel-body">
+                    <div class="adv-table">
+                        <table class="display table table-bordered table-striped" id="dynamic-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>USERID</th>
+                                    <th>TITLE</th>
+                                    <th>DESC</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let mov of movies">
+                                    <td>
+                                        {{mov.id}}
+                                    </td>
+                                    <td>
+                                        {{mov.userId}}
+                                    </td>
+                                    <td>
+                                        {{mov.title}}
+                                    </td>
+                                    <td>
+                                        {{mov.body}}
+                                    </td>
+                                    <td width="160px;">
+                                        <button (click)="updateMovie('test','test',1,1)">
+                                            Edit
+                                        </button>
+                                        <button class="delete-button" (click)="deleteMovie(mov, $event)">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2016 - My First AngularJS 2 Application</p>
+    </footer>
+</div>
+
+
+
